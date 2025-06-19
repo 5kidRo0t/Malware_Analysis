@@ -17,7 +17,6 @@ rule ValleyRAT_Malware_packer
 		$hex3={ 30 37 30 36 31 35 30 30 30 30 30 30 5A }
 	condition:
 		all of them and pe.imphash() == "9165ea3e914e03bda3346f13edbd6ccd" and
-		pe.imphash() == "9165ea3e914e03bda3346f13edbd6ccd" and
 		(pe.imports("kernel32", "VirtualAlloc") or pe.imports("kernel32", "VirtualFree"))
 }
 rule ValleyRAT_Malware
@@ -36,6 +35,5 @@ rule ValleyRAT_Malware
 		$hex2={ 34 38 66 64 35 30 61 31 35 61 39 61 }
 	condition:
 		all of them and pe.imphash() == "b8bf08fa843a9ec1ce10d80fbf550c26" and
-		pe.imphash() == "b8bf08fa843a9ec1ce10d80fbf550c26" and
 		(pe.imports("ws2_32.dll", "WSAWaitForMultipleEvents") or pe.imports("ws2_32.dll", "WSAEnumNetworkEvents"))
 }
